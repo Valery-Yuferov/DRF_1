@@ -24,3 +24,11 @@ class SensorListSerializer(serializers.ModelSerializer):
         model = Sensor
         fields = ['sensor_id', 'sensor_name', 'description']
 
+
+class MeasurementCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Measurement
+        fields = ['temperature']
+
+
+

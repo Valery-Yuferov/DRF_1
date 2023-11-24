@@ -26,3 +26,8 @@ class ListCreateAPIView(ListAPIView):
     queryset = Measurement.objects.all()
     serializer_class = MeasurementSerializer
 
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return MeasurementCreateSerializer
+        return MeasurementSerializer
+
